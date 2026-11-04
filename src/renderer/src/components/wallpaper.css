@@ -1,0 +1,33 @@
+/* ---- Wallpaper that stays readable (also in the fast look) ---- */
+.wp-scrim { position: absolute; inset: 0; background: #000; transition: opacity 0.3s; }
+:root[data-theme='light'] .wp-scrim { background: #fff; }
+/* Built-in wallpapers are still pictures in the fast look, they just do not move. */
+:root[data-fast='on'] .wp-scene { animation: none; }
+/* With a wallpaper on, panels let a little of it through instead of being solid, and tint more if the picture is bright. */
+:root[data-wallpaper='on'] { --wp-panel: rgba(8, 10, 14, 0.66); --wp-panel-2: rgba(10, 12, 16, 0.74); --wp-modal: rgba(10, 12, 16, 0.93); }
+:root[data-wallpaper='on'][data-wp-tone='bright'] { --wp-panel: rgba(8, 10, 14, 0.8); --wp-panel-2: rgba(10, 12, 16, 0.86); --wp-modal: rgba(10, 12, 16, 0.96); }
+:root[data-theme='light'][data-wallpaper='on'] { --wp-panel: rgba(255, 255, 255, 0.72); --wp-panel-2: rgba(255, 255, 255, 0.8); --wp-modal: rgba(255, 255, 255, 0.95); }
+:root[data-theme='light'][data-wallpaper='on'][data-wp-tone='bright'] { --wp-panel: rgba(255, 255, 255, 0.6); --wp-panel-2: rgba(255, 255, 255, 0.7); }
+:root[data-fast='on'][data-wallpaper='on'] { --glass-fill: var(--wp-panel); --glass-fill-2: var(--wp-panel-2); --glass-modal: var(--wp-modal); }
+:root[data-fast='on'][data-wallpaper='on'] .sidebar,
+:root[data-fast='on'][data-wallpaper='on'] .recent,
+:root[data-fast='on'][data-wallpaper='on'] .composer { background: var(--wp-panel); }
+:root[data-fast='on'][data-wallpaper='on'] .chip,
+:root[data-fast='on'][data-wallpaper='on'] .nav-item:hover,
+:root[data-fast='on'][data-wallpaper='on'] .space:hover { background: var(--wp-panel-2); }
+:root[data-fast='on'][data-wallpaper='on'] .modal { background: var(--wp-modal); }
+/* Loose text (chat replies, hints, title) gets a soft halo so it never disappears into the picture. */
+:root[data-wallpaper='on'] .space-hint,
+:root[data-wallpaper='on'] .home-footer,
+:root[data-wallpaper='on'] .titlebar-title,
+:root[data-wallpaper='on'] .empty-note,
+:root[data-wallpaper='on'] .msg.assistant :is(p, li, h1, h2, h3, h4, strong, em, span, a):not(pre *) {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 14px rgba(0, 0, 0, 0.75) !important;
+}
+:root[data-theme='light'][data-wallpaper='on'] .space-hint,
+:root[data-theme='light'][data-wallpaper='on'] .home-footer,
+:root[data-theme='light'][data-wallpaper='on'] .titlebar-title,
+:root[data-theme='light'][data-wallpaper='on'] .empty-note,
+:root[data-theme='light'][data-wallpaper='on'] .msg.assistant :is(p, li, h1, h2, h3, h4, strong, em, span, a):not(pre *) {
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 0 14px rgba(255, 255, 255, 0.75) !important;
+}

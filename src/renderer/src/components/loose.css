@@ -1,0 +1,4 @@
+/* code without a file name: pick the name, then review */
+.loose-help { font-size: 13px; color: var(--text-dim); margin: 2px 0 8px; }
+.loose-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+.loose-input { flex: 1; min-width: 0; padding: 7px 10px; border-radius: 9px; border: 1px solid var(--border); background: transparent; color: var(--text); font: inherit; font-family: var(--mono, monospace); font-size: 13px; }
