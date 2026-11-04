@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://setudev.space/sitemap.xml

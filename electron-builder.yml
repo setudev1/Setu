@@ -1,0 +1,36 @@
+appId: com.setudev.setu
+productName: Setu
+copyright: Copyright © 2026 Ansh Rai and Shyam Patel (SetuDev)
+directories:
+  buildResources: build
+  output: dist
+files:
+  - out/**/*
+  - package.json
+asar: true
+compression: maximum
+publish: null
+win:
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: Setu-Setup-${version}.${ext}
+  # Not code-signed yet, so Windows SmartScreen shows "unknown publisher" on first run.
+nsis:
+  oneClick: false
+  perMachine: false                      # installs for the current user, no admin prompt
+  allowElevation: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Setu
+  runAfterFinish: true
+  deleteAppDataOnUninstall: false        # chats, settings and checkpoints survive an uninstall or update
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  installerHeaderIcon: build/icon.ico
+  include: build/installer.nsh
+  artifactName: Setu-Setup-${version}.${ext}
+  uninstallDisplayName: Setu ${version}

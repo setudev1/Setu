@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setu: privacy policy and terms</title>
+<meta name="description" content="How Setu treats your data, and the terms for using it. Short version: everything stays on your computer.">
+<!-- Keep every sentence true: if Setu ever starts collecting data, or the website adds analytics, change the text first. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #000; --surface: #0d0f12; --border: rgba(255,255,255,.1);
+    --text: #e7e9ec; --dim: #9097a1; --accent: #5fd3a3; --amber: #e8a33d;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) { --bg: #fff; --surface: #f4f5f7; --border: rgba(0,0,0,.12); --text: #14171b; --dim: #55606c; --accent: #0b7a54; --amber: #8a5a00; }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 'IBM Plex Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+  header { border-bottom: 1px solid var(--border); }
+  .bar { max-width: 760px; margin: 0 auto; padding: 18px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 600; font-size: 18px; }
+  nav { display: flex; gap: 20px; font-size: 15px; }
+  nav a { color: var(--dim); text-decoration: none; }
+  nav a:hover { color: var(--text); }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 80px; }
+  h1 { font-size: clamp(30px, 6vw, 42px); line-height: 1.15; letter-spacing: -.02em; margin: 0 0 8px; font-weight: 600; }
+  h2 { font-size: 28px; letter-spacing: -.01em; margin: 72px 0 8px; font-weight: 600; scroll-margin-top: 24px; }
+  h3 { font-size: 18px; margin: 32px 0 6px; font-weight: 600; }
+  p, li { max-width: 68ch; }
+  p { margin: 0 0 14px; }
+  ul { padding-left: 22px; margin: 0 0 14px; }
+  li { margin-bottom: 6px; }
+  .meta { color: var(--dim); font-size: 14px; margin-bottom: 28px; }
+  .short { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px 8px; margin: 22px 0 8px; }
+  .short p { font-weight: 600; margin-bottom: 8px; }
+  mark { background: color-mix(in srgb, var(--amber) 22%, transparent); color: var(--amber); border-radius: 4px; padding: 0 5px; font-family: 'IBM Plex Mono', monospace; font-size: .88em; }
+  footer { border-top: 1px solid var(--border); color: var(--dim); font-size: 14px; }
+  footer div { max-width: 760px; margin: 0 auto; padding: 24px 16px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="/" aria-label="Setu home">
+      <svg width="30" height="28" viewBox="76 100 360 330" fill="none" aria-hidden="true">
+        <defs><linearGradient id="o" x1="96" y1="400" x2="416" y2="120" gradientUnits="userSpaceOnUse"><stop stop-color="#5fd3a3"/><stop offset="1" stop-color="#7a9cff"/></linearGradient></defs>
+        <path d="M96 372V272A160 160 0 0 1 416 272V372H360V272A104 104 0 0 0 152 272V372Z" fill="url(#o)"/>
+        <path d="M176 372V272A80 80 0 0 1 336 272V372H296V272A40 40 0 0 0 216 272V372Z" fill="url(#o)" opacity=".75"/>
+        <path d="M240 372V272A16 16 0 0 1 272 272V372Z" fill="#fff"/>
+      </svg>
+      Setu
+    </a>
+    <nav aria-label="Legal pages"><a href="#privacy">Privacy policy</a><a href="#terms">Terms of use</a></nav>
+  </div>
+</header>
+
+<main>
+  <h1 id="privacy">Privacy policy</h1>
+  <p class="meta">Last updated 8 November 2026</p>
+
+  <div class="short">
+    <p>The short version</p>
+    <ul>
+      <li>What you type, what Setu replies, and the files it reads all stay on your computer.</li>
+      <li>There is no account, no advertising, and no tracking inside the app. We never see your code or chats.</li>
+      <li>Cloud models are off. If you turn one on, your messages go to that provider, and Setu tells you first.</li>
+      <li>Setu goes online only when you ask it to: to download a model, to use a cloud model, or to check for an update.</li>
+    </ul>
+  </div>
+
+  <h3>Who we are (data fiduciary)</h3>
+  <p>Setu is a desktop app that helps you write code with AI models running on your own computer. It is made by Ansh Rai and Shyam Patel (the Setu team) ("we"). You can reach us at <mark>setuworkas@gmail.com</mark>.</p>
+
+  <h3>What stays on your computer</h3>
+  <ul>
+    <li>Your messages and Setu's replies.</li>
+    <li>Your recent sessions, so you can continue them later. Setu keeps the last 30.</li>
+    <li>The files in the project folders you choose. Setu reads them only while you work in that folder, and it changes a file only after you approve the change.</li>
+    <li>Checkpoints: copies of your files saved just before a change, so you can undo it.</li>
+    <li>Your settings and the wallpaper you pick. A wallpaper is copied into Setu's own folder and never uploaded.</li>
+  </ul>
+  <p>We have no access to any of this.</p>
+  <p>Setu also looks for things that resemble API keys, tokens and passwords in your messages. If it finds one, it warns you before sending, and it hides the key in the saved copy of your session. This check is a best effort. It catches common formats, not every secret, so please don't paste secrets you can avoid pasting.</p>
+
+  <h3>When data leaves your computer</h3>
+  <p>Only when you choose an action that needs the internet:</p>
+  <ul>
+    <li><strong>Downloading a model.</strong> Setu uses Ollama, which runs on your computer. When you download a model, Ollama fetches it from its library. Ollama can see your IP address, as any website would, and handles it under its own privacy policy.</li>
+    <li><strong>Using a cloud model.</strong> A cloud model runs on Ollama's servers. If you pick one, your messages, and the project files Setu shows the model, are sent to Ollama while you use it. Setu asks you before the first time and shows a "Cloud" label while one is selected. We don't receive a copy. Ollama's terms and privacy policy apply to that data.</li>
+    <li><strong>Your own provider keys.</strong> Later versions may let you add your own keys for other AI providers. If so, the key stays on your computer, and requests go straight to that provider, never through us.</li>
+    <li><strong>This website and the newest version.</strong> After launch, the download section asks GitHub (api.github.com) for the newest version number and its release notes. GitHub can see your IP address, as with any web request. Nothing else is sent.</li>
+    <li><strong>Checking for updates.</strong> Setu asks GitHub (api.github.com, where Setu's releases are published) whether a newer version exists. That server can see your IP address, as with any web request. Nothing else is sent.</li>
+  </ul>
+
+  <h3>What we collect, why, and for how long</h3>
+  <p><b>Through the app:</b> nothing. Setu has no analytics, no crash reporting and no advertising. If we ever add crash reports, they will be off until you turn them on.</p>
+  <p><b>Through this website:</b> nothing by default. There are no accounts, cookies or analytics, and we do not ask for your email address. One optional exception: if you are one of the first 100 people to download Setu, you may type a first name or nickname and tick a box to show it on the public Founding Wall. If you do, that name is stored in a small database at Cloudflare that we control, and anyone can see it on this site. To stop the same person adding many names, we also keep a scrambled one-way code made from your internet address (not the address itself) for 30 days. The name is for people aged 18 and over, and we keep it while the wall is up. To have it removed, email us and we will delete it. You can also simply not tick the box: the badge is made on your own device and is never sent to us.</p>
+  <p><b>Website visits:</b> this site sets no cookies and uses no analytics or advertising. To show the page, your browser fetches fonts from Google Fonts and an animation library from Cloudflare, so those services can see your IP address. Our hosting provider may also keep ordinary server logs (IP address, time of visit).</p>
+  <p><b>If you email us:</b> we use your message and address only to reply and to improve Setu, and keep them as long as the conversation needs.</p>
+
+  <h3>Your choices</h3>
+  <p>To remove everything Setu stored, uninstall it and delete its folder inside your Windows AppData folder. Your project files are yours and are never touched by this. To stop any data going to a cloud provider, choose a model without the "Cloud" label.</p>
+
+  <h3>Children</h3>
+  <p>Setu is a developer tool and is only for people aged 18 and over. The first time Setu opens it asks whether you are 18 or older. Only that yes or no answer is saved, on your own computer. We do not ask for your date of birth or any ID, and we do not knowingly collect data from anyone under 18. If you think a child has sent us their information by email, tell us and we will delete it.</p>
+
+  <h3>Your rights</h3>
+  <p>Under India's Digital Personal Data Protection Act, 2023 you can ask us to: tell you what personal data of yours we hold and how it is used; correct it; delete it; and withdraw your consent. You can also nominate another person to exercise these rights for you if you die or cannot act. Write to <mark>setuworkas@gmail.com</mark>. We aim to reply within 7 days and to finish the request within 30 days.</p>
+
+  <h3>Grievances and complaints</h3>
+  <p>Grievance contact: Ansh Rai, <mark>setuworkas@gmail.com</mark>. If we do not resolve your complaint, you can complain to the Data Protection Board of India.</p>
+
+  <h3>Keeping your data safe, and breaches</h3>
+  <p>We keep as little data as possible, so there is little to lose. If there is a breach that affects your data, we will report it to the Data Protection Board of India and to CERT-In as the law requires, and we will tell you.</p>
+
+  <h3>Law that applies</h3>
+  <p>We follow Indian law, including the Information Technology Act, 2000 and its rules, and the Digital Personal Data Protection Act, 2023 and its Rules, 2025, which are being brought into force in stages. We have built to the full set of duties already, even where some of them do not yet legally apply.</p>
+
+  <h3>Changes to this policy</h3>
+  <p>When we change it, we update the date above, and for anything that affects your data we also say so inside the app.</p>
+
+  <h1 id="terms" style="margin-top:88px">Terms of use</h1>
+  <p class="meta">Last updated 8 November 2026</p>
+
+  <p>By installing or using Setu you agree to these terms. If you don't agree, please don't use it.</p>
+
+  <h3>Using Setu</h3>
+  <p>You must be 18 or older to use Setu. Setu is free to use, for personal and commercial work. Please don't use it to break the law, to harm other people, or to create malware.</p>
+
+  <h3>Responsible use and other names</h3>
+  <p>Do not use Setu to make malware, to infringe someone else's copyright or trademark, to cheat, harass or impersonate people, or to do anything else against Indian law (including the Information Technology Act, 2000). Setu's replies come from AI models, not from us or from a person. "Ollama" and the names of AI models belong to their owners. Setu is independent and is not made, endorsed or sponsored by them.</p>
+
+  <h3>AI makes mistakes</h3>
+  <p>AI models can write code that is wrong, insecure, or too similar to someone else's. Setu shows you each change and asks before saving it, and you decide what to accept. You are responsible for reviewing, testing and running anything you use. Checkpoints help you undo a change but are not a backup. Keep your own backups or use version control such as Git.</p>
+
+  <h3>Other people's software and models</h3>
+  <p>Setu works with Ollama and with AI models made by other organisations. Each has its own licence and terms, and you must follow them. If you use a cloud model, the provider's terms, limits and prices apply. We don't control those services and aren't responsible for them.</p>
+
+  <h3>Your work</h3>
+  <p>You own your code, prompts and files. We claim no rights over them, and they never reach us. The licence of the model you use may add its own conditions to what it produces.</p>
+
+  <h3>No warranty</h3>
+  <p>Setu is provided "as is", without promises that it will be error-free, always available, or fit for a particular purpose. Early versions are labelled beta and may have bugs.</p>
+
+  <h3>Limit of responsibility</h3>
+  <p>To the extent the law allows, we are not liable for lost data, lost profits or other indirect losses from using Setu. Because Setu is free, our total liability to you is limited to what you paid us, which is nothing. Nothing in these terms limits any right you have under law that cannot be waived.</p>
+
+  <h3>Changes and ending</h3>
+  <p>We may update Setu or these terms, or stop offering Setu. When terms change in a way that matters, we say so in the app or on this page. You can stop using Setu at any time by uninstalling it.</p>
+
+  <h3>Governing law</h3>
+  <p>These terms are governed by the laws of India.</p>
+
+  <h3>Contact</h3>
+  <p>Email: setuworkas@gmail.com</p>
+</main>
+<footer><div>Setu runs on your computer. <a href="#privacy">Privacy policy</a> · <a href="#terms">Terms of use</a></div></footer>
+</body>
+</html>

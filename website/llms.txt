@@ -1,0 +1,9 @@
+# Setu AI
+
+> Setu is a free AI agent that runs locally on your Windows PC using Ollama or OpenRouter. It works offline, keeps your data private (no data leakage) and is fully customisable. It can optionally connect online to Ollama cloud versions of models like Gemini or DeepSeek.
+
+Website: https://setudev.space/
+Instagram: https://www.instagram.com/setu__india/
+Price: Free
+Languages: English, Hindi, Gujarati, Hinglish
+Also known as: Setu, Setu Dev, Setu Developer, Setu India
