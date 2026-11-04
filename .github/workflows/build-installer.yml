@@ -1,0 +1,73 @@
+name: Build Windows installer
+
+# ONE BUTTON: Actions tab -> "Build Windows installer" -> Run workflow. Tick "publish" to make the public download (v0.1.0).
+# Pushing a tag like v0.10.0 also publishes the installer as a GitHub Release (the download link for the website).
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish as a public release (v0.1.0)? Leave off to only build the installer for testing / sending to creators.'
+        type: boolean
+        default: false
+  push:
+    branches: [main, master]
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install packages
+        shell: pwsh
+        run: |
+          # With a package-lock.json the build uses the exact versions you tested. Without one, versions float.
+          if (Test-Path package-lock.json) { npm ci --no-audit --no-fund }
+          else { Write-Host "::warning::No package-lock.json - package versions are not pinned. Run npm install on your PC and commit the lock file."; npm install --no-audit --no-fund }
+
+      - name: Build the installer
+        run: npm run dist:win
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+
+      - name: Make a fixed-name copy and checksums
+        shell: pwsh
+        run: |
+          $exe = Get-ChildItem dist -Filter "Setu-Setup-*.exe" | Select-Object -First 1
+          if (-not $exe) { throw "No installer was produced" }
+          # The website links to this fixed name: releases/latest/download/Setu-Setup.exe
+          Copy-Item $exe.FullName "dist/Setu-Setup.exe"
+          foreach ($f in Get-ChildItem dist -Filter *.exe) {
+            $hash = (Get-FileHash $f.FullName -Algorithm SHA256).Hash.ToLower()
+            "$hash  $($f.Name)" | Out-File -Encoding ascii "dist/$($f.Name).sha256"
+            Write-Host "$hash  $($f.Name)"
+          }
+
+      - name: Keep the installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: Setu-Setup
+          path: |
+            dist/*.exe
+            dist/*.sha256
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish release (tag pushed, or you ticked "publish")
+        if: startsWith(github.ref, 'refs/tags/v') || inputs.publish == true
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || 'v0.1.0' }}
+          name: Setu ${{ startsWith(github.ref, 'refs/tags/') && github.ref_name || 'v0.1.0' }}
+          files: |
+            dist/*.exe
+            dist/*.sha256
