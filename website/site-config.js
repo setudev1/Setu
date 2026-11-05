@@ -17,7 +17,7 @@ window.SETU_SITE = {
   // 4) In the Form, use "Get pre-filled link", fill any name, copy the link. From it take the part before /viewform, and change
   //    "viewform" to "formResponse" -> nameFormUrl. The "entry.123456789" part is nameFormField.
   // EASIEST: the address of your free Cloudflare wall (see wall-server/SETUP-WALL.md). When set, names are added by themselves, checked, and capped at 100.
-  wallApi: "",
+  wallApi: "https://setu-wall.setuworkas.workers.dev",
   namesFeedUrl: "",
   nameFormUrl: "",
   nameFormField: "",
